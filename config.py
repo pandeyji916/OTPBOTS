@@ -14,6 +14,8 @@ ADMIN_GROUP_ID = -1004322196899
 USDT_RATE = 90.0  
 
 PAYMENT_UPI_ID = "pandeyharshit269@okaxis"
+AUTO_PAYMENT_UPI_ID = "pandeyharshit269@okicici"
+MANUAL_PAYMENT_UPI_ID = "pandeyharshit269-1@oksbi"
 BINANCE_ID = ""
 TRC20_ADDRESS = ""
 
