@@ -3,7 +3,7 @@ import qrcode
 import io
 from hydrogram import Client, filters, enums
 from hydrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply, CallbackQuery, Message
-from config import ADMINS, PAYMENT_UPI_ID, AUTO_PAYMENT_UPI_ID, MANUAL_PAYMENT_UPI_ID, BINANCE_ID, TRC20_ADDRESS, ADMIN_GROUP_ID, BHARATPE_MERCHANT_ID, BHARATPE_TOKEN, DIVIDER
+from config import ADMINS, PAYMENT_UPI_ID, BINANCE_ID, TRC20_ADDRESS, ADMIN_GROUP_ID, BHARATPE_MERCHANT_ID, BHARATPE_TOKEN, DIVIDER
 import aiohttp
 from database import get_user, update_balance, create_deposit, get_deposit
 from utils import format_price
@@ -304,12 +304,12 @@ async def handle_deposit_text_input(c, msg):
                 "amount": amount
             }
 
-            qr_image = generate_upi_qr(MANUAL_PAYMENT_UPI_ID, amount)
+            qr_image = generate_upi_qr(PAYMENT_UPI_ID, amount)
             text = (
                 "<b>📝 UPI MANUAL VERIFICATION</b>\n"
                 f"{DIVIDER}\n"
                 f"💰 <b>Amount:</b> ₹{amount}\n"
-                f"🆔 <b>UPI ID:</b> <code>{MANUAL_PAYMENT_UPI_ID}</code>\n"
+                f"🆔 <b>UPI ID:</b> <code>{PAYMENT_UPI_ID}</code>\n"
                 f"{DIVIDER}\n"
                 "<b>STEPS TO PAY:</b>\n"
                 "1️⃣ QR scan karein ya UPI ID par payment karein.\n"
@@ -331,12 +331,12 @@ async def handle_deposit_text_input(c, msg):
                 "amount": amount
             }
 
-            qr_image = generate_upi_qr(AUTO_PAYMENT_UPI_ID, amount)
+            qr_image = generate_upi_qr(PAYMENT_UPI_ID, amount)
             text = (
                 "<b>💳 UPI AUTOMATIC PAYMENT</b>\n"
                 f"{DIVIDER}\n"
                 f"💰 <b>Amount:</b> ₹{amount}\n"
-                f"🆔 <b>UPI ID:</b> <code>{AUTO_PAYMENT_UPI_ID}</code>\n"
+                f"🆔 <b>UPI ID:</b> <code>{PAYMENT_UPI_ID}</code>\n"
                 f"{DIVIDER}\n"
                 "<b>STEPS TO PAY:</b>\n"
                 "1️⃣ Scan QR ya UPI ID copy karein.\n"
